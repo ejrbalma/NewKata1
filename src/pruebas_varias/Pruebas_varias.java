@@ -32,7 +32,7 @@ public class Pruebas_varias {
         System.out.println(persona1.getAge());
         persona1.setAccount("20528000773303724509");
         System.out.println(persona1.getAccount());
-
+        System.out.println(persona1.getFullName());
         System.out.println("Adios, he terminado");
 
     }
