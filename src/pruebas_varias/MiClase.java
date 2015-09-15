@@ -57,6 +57,10 @@ public class MiClase {
         this.account = account;
     }
 
+    public String getFullName ()
+    {
+        return name+" "+surname;
+    }
     public int getAge() {
         Calendar today = GregorianCalendar.getInstance();
 
