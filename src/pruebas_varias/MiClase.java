@@ -18,6 +18,7 @@ public class MiClase {
     private final Date birthday;
     private String address;
     private String account;
+    private static final long MILLISECONDS_PER_YEAR = (long) (1000 * 60 * 60 * 24 * 365.25);
 
     public MiClase(String name, String surname, Date birthday, String address, String account) {
         this.name = name;
@@ -57,7 +58,12 @@ public class MiClase {
 
     public int getAge() {
         Date today = new Date();
-        
-        return (int) ((today.getTime()-birthday.getTime())/(1000*60*60*24*365.25));
+
+        return (int) milliseconds(today.getTime() - birthday.getTime());
     }
+
+    private long milliseconds(long millis) {
+        return (long) (millis / MILLISECONDS_PER_YEAR);
+    }
+
 }
