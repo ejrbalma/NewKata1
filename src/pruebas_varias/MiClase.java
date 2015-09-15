@@ -5,7 +5,8 @@
  */
 package pruebas_varias;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -15,12 +16,12 @@ public class MiClase {
 
     private final String name;
     private final String surname;
-    private final Date birthday;
+    private final Calendar birthday;
     private String address;
     private String account;
     private static final long MILLISECONDS_PER_YEAR = (long) (1000 * 60 * 60 * 24 * 365.25);
 
-    public MiClase(String name, String surname, Date birthday, String address, String account) {
+    public MiClase(String name, String surname, Calendar birthday, String address, String account) {
         this.name = name;
         this.surname = surname;
         this.birthday = birthday;
@@ -36,7 +37,7 @@ public class MiClase {
         return surname;
     }
 
-    public Date getBirthday() {
+    public Calendar getBirthday() {
         return birthday;
     }
 
@@ -57,9 +58,9 @@ public class MiClase {
     }
 
     public int getAge() {
-        Date today = new Date();
+        Calendar today = GregorianCalendar.getInstance();
 
-        return (int) milliseconds(today.getTime() - birthday.getTime());
+        return (int) milliseconds(today.getTimeInMillis() - birthday.getTimeInMillis());
     }
 
     private long milliseconds(long millis) {
